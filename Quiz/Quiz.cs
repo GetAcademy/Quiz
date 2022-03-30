@@ -22,6 +22,9 @@ namespace Quiz
             var isCorrect = question.Run();
             if (isCorrect) _correctCount++;
             ShowStats();
+            Console.WriteLine("Trykk en tast for å fortsette");
+            Console.ReadKey();
+            Console.Clear();
         }
 
         private void ShowStats()
