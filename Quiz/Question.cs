@@ -26,8 +26,8 @@ namespace Quiz
         public bool Run()
         {
             Show();
-            ConsoleKey key;
-            do
+            var key = ConsoleKey.A;
+            while (key != ConsoleKey.Enter)
             {
                 key = Console.ReadKey().Key;
                 if (key == ConsoleKey.Tab)
@@ -37,7 +37,7 @@ namespace Quiz
                     Console.Clear();
                     Show();
                 }
-            } while (key != ConsoleKey.Enter);
+            } 
             var isCorrect = _currentAnswerNo == _correctAnswerNo;
             Console.WriteLine(isCorrect ? "Riktig!" : "Feil");
             return isCorrect;
@@ -50,8 +50,8 @@ namespace Quiz
                 var questionNo = i + 1;
                 if (questionNo == _currentAnswerNo)
                 {
-                    Console.BackgroundColor = ConsoleColor.White;
-                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 }
                 Console.WriteLine($"{questionNo}: {_answers[i]}");
                 Console.BackgroundColor = ConsoleColor.Black;
