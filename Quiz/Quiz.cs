@@ -13,7 +13,7 @@ namespace Quiz
             _questions = questions;
         }
 
-        public bool IsRunning => _currentQuestionIndex < _questions.Length;
+        public bool IsRunning => _currentQuestionIndex < _questions.Length-1;
 
         public void Run()
         {
